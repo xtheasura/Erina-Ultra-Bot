@@ -9,9 +9,9 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import asyncio
 
 PM_ERINA_TEXT = """
-**ꜱᴜᴘ!!! ɪ ᴀᴍ ᴇʀɪɴᴀ, ɴɪᴄᴇ ᴛᴏ ᴍᴇᴇᴛ ʏᴏᴜ!!**
-ɪ ᴀᴍ ᴀɴᴅ ᴀᴅᴠᴀɴᴄᴇᴅ ʙᴏᴛ
-**𝑹𝒆𝒑𝒐𝒓𝒕 𝑰𝒔𝒔𝒖𝒆𝒔 - @ErinaSupport**
+**𝑆𝑢𝑝 !!! 𝐼 𝐴𝑚 𝐸𝑟𝑖𝑛𝑎, 𝑁𝑖𝑐𝑒 𝑇𝑜 𝑀𝑒𝑒𝑡 𝑌𝑜𝑢 !!**
+𝐼 𝑎𝑚 𝐴𝑛𝑑 𝑎𝑑𝑣𝑎𝑛𝑐𝑒𝑑 𝐵𝑜𝑡
+**ʀᴇᴘᴏʀᴛ ɪꜱꜱᴜᴇꜱ - @ErinaSupport**
 """
 
 PM_ERINA_PIC = "https://telegra.ph/file/7107cb1bb3d4abc76b9c5.jpg"
