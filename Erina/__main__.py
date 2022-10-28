@@ -39,7 +39,7 @@ START_KEYBOARD = InlineKeyboardMarkup(
   ]
 )
 
-@bot.on_message(get_command('start'))
+@bot.on_message(filters.command('start'))
 async def miostart(_, message):
     return await message.reply_photo(
       photo=PM_ERINA_PIC,
