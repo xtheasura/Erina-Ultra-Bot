@@ -27,7 +27,9 @@ BOT_ID = x.id
 
 x = None
 
-PTB = Application.builder().token(TOKEN).defaults(Defaults).concurrent_updates(True).build()
+PTB = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
+asyncio.get_event_loop().run_until_complete(application.bot.initialize())
+
 
 
 MOD_LOAD = []
