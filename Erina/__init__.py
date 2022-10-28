@@ -19,6 +19,20 @@ print("[INFO]: INITIALIZING DATABASE")
 async_mongo_client = async_mongo(MONGO_URI)
 db = async_mongo_client.mio
 
+ENV = bool(os.environ.get("ENV", False))
+
+if ENV:
+    TOKEN = os.environ.get("TOKEN")
+
+    try:
+        OWNER_ID = int(os.environ.get("OWNER_ID"))
+    except ValueError:
+        raise Exception("Your OWNER_ID is wrong bruh.")
+    
+    try:
+        OWNER_ID2 = int(os.environ.get("OWNER_ID2"))
+    except ValueError:
+        raise Exception("Your OWNER_ID2 is wrong bruh.")
 
 START_TIME = time.time()
 bot.start()
