@@ -74,7 +74,7 @@ async def admin_cache_func(_, cmu: ChatMemberUpdated):
     }
 
 
-@bot.on_message(filters.command("purge") & ~filters.edited & ~filters.private)
+@bot.on_message(filters.command("purge") & ~filters.private)
 @adminsOnly("can_delete_messages")
 async def purgeFunc(_, message: Message):
     repliedmsg = message.reply_to_message
@@ -372,7 +372,7 @@ async def _umute(_, query):
 
 
 
-@bot.on_message(filters.command("unban") & ~filters.edited & ~filters.private)
+@bot.on_message(filters.command("unban") & ~filters.private)
 @adminsOnly("can_restrict_members")
 async def unban_func(_, message: Message):
     reply = message.reply_to_message
@@ -394,7 +394,7 @@ async def unban_func(_, message: Message):
 
 
 
-@bot.on_message(filters.command("del") & ~filters.edited & ~filters.private)
+@bot.on_message(filters.command("del") & ~filters.private)
 @adminsOnly("can_delete_messages")
 async def deleteFunc(_, message: Message):
     if not message.reply_to_message:
@@ -405,7 +405,6 @@ async def deleteFunc(_, message: Message):
 
 @bot.on_message(
     filters.command("fullpromote")
-    & ~filters.edited
     & ~filters.private
 )
 @adminsOnly("can_promote_members")
@@ -436,7 +435,6 @@ async def promoteFunc(_, message: Message):
 
 @bot.on_message(
     filters.command("promote")
-    & ~filters.edited
     & ~filters.private
 )
 @adminsOnly("can_promote_members")
@@ -466,7 +464,7 @@ async def promoteFunc(_, message: Message):
 
 
 @bot.on_message(
-    filters.command(["pin", "unpin"]) & ~filters.edited & ~filters.private
+    filters.command(["pin", "unpin"]) & ~filters.private
 )
 @adminsOnly("can_pin_messages")
 async def pin(_, message: Message):
@@ -488,7 +486,7 @@ async def pin(_, message: Message):
 
 
 @bot.on_message(
-    filters.command("tmute") & ~filters.edited & ~filters.private
+    filters.command("tmute") & ~filters.private
 )
 @adminsOnly("can_restrict_members")
 async def mute(_, message: Message):
@@ -535,7 +533,7 @@ async def mute(_, message: Message):
 
 
 @bot.on_message(
-    filters.command("mute") & ~filters.edited & ~filters.private
+    filters.command("mute") & ~filters.private
 )
 @adminsOnly("can_restrict_members")
 async def mute(_, message: Message):
