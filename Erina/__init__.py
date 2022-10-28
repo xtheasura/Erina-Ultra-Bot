@@ -3,7 +3,6 @@ from motor.motor_asyncio import AsyncIOMotorClient as async_mongo
 from typing import Union
 import os 
 import time
-from Erina.fonts import FONTS
 from config import *
 
 bot = Client(
