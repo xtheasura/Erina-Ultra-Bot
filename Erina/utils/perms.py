@@ -84,15 +84,4 @@ def adminsOnly(permission):
                         **kwargs,
                     )
                 return await unauthorised(message, permission, subFunc2)
-            # For admins and OWNERS 
-            userID = message.from_user.id
-            permissions = await member_permissions(chatID, userID)
-            if userID not in OWNERS and permission not in permissions:
-                return await unauthorised(message, permission, subFunc2)
-            return await authorised(
-                func, subFunc2, client, message, *args, **kwargs
-            )
-
-        return subFunc2
-
-    return subFunc
+            
