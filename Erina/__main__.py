@@ -58,7 +58,7 @@ if __name__ == "__main__":
     )
     logging.getLogger("pyrogram").setLevel(logging.INFO)
     for module in ALL_MODULES:
-      importlib.import_module("Mio.plugins." + module)
+      importlib.import_module("Erina.plugins." + module)
     
     print("I AM NOW ONLINE") 
     print("Project By Ryu120, Gift to my bich Tarun")
