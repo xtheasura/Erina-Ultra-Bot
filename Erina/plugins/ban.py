@@ -74,7 +74,7 @@ async def admin_cache_func(_, cmu: ChatMemberUpdated):
     }
 
 
-@bot.on_message(filters.command("purge") & ~filters.private)
+@bot.on_message(filters.command("purge") & ~filters.edited & ~filters.private)
 @adminsOnly("can_delete_messages")
 async def purgeFunc(_, message: Message):
     repliedmsg = message.reply_to_message
