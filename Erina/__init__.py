@@ -26,6 +26,8 @@ BOT_ID = x.id
 
 x = None
 
+PTB = Application.builder().token(TOKEN).defaults(defaults).concurrent_updates(True).build()
+
 
 MOD_LOAD = []
 MOD_NOLOAD = []
