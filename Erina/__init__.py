@@ -27,7 +27,7 @@ BOT_ID = x.id
 
 x = None
 
-PTB = Application.builder().token(TOKEN).post_init(post_init).build()
+PTB = Application.builder().token(TOKEN).build()
 asyncio.get_event_loop().run_until_complete(application.bot.initialize())
 
 
