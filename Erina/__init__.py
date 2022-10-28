@@ -30,7 +30,7 @@ BOT_ID = x.id
 x = None
 
 PTB = Application.builder().token(TOKEN).build()
-asyncio.get_event_loop().run_until_complete(application.bot.initialize())
+asyncio.get_event_loop().run_until_complete(PTB.bot.initialize())
 
 
 
