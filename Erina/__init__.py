@@ -4,6 +4,7 @@ from typing import Union
 import os 
 import time
 from config import *
+from telegram.ext import Application, Defaults
 
 bot = Client(
     'Erina',
