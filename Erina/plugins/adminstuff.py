@@ -73,52 +73,6 @@ async def admin_cache_func(_, cmu: ChatMemberUpdated):
     }
 
 
-@bot.on_message(filters.command("purge") & ~filters.edited & ~filters.private)
-@adminsOnly("can_delete_messages")
-async def purgeFunc(_, message: Message):
-    repliedmsg = message.reply_to_message
-    await message.delete()
-
-    if not repliedmsg:
-        return await message.reply_text("Reply to a message to purge from.")
-
-    cmd = message.command
-    if len(cmd) > 1 and cmd[1].isdigit():
-        purge_to = repliedmsg.message_id + int(cmd[1])
-        if purge_to > message.message_id:
-            purge_to = message.message_id
-    else:
-        purge_to = message.message_id   
-
-    chat_id = message.chat.id
-    message_ids = []
-
-    for message_id in range(
-            repliedmsg.message_id,
-            purge_to,
-    ):
-        message_ids.append(message_id)
-
-        # Max message deletion limit is 100
-        if len(message_ids) == 100:
-            await bot.delete_messages(
-                chat_id=chat_id,
-                message_ids=message_ids,
-                revoke=True,  # For both sides
-            )
-
-            # To delete more than 100 messages, start again
-            message_ids = []
-
-    # Delete if any messages left
-    if len(message_ids) > 0:
-        await bot.delete_messages(
-            chat_id=chat_id,
-            message_ids=message_ids,
-            revoke=True,
-        )
-
-
 
 
 @bot.on_message(filters.command("ban"))
