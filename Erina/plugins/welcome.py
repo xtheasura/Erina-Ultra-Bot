@@ -40,10 +40,9 @@ def parse_com(com, key):
   return r
 
 
-@bot.on_message(filters.command('setwelcome'))
+@bot.on_message(filters.command('setwelcome') & admin_fliter)
 async def setwelcome(_,message):
-  admins = await bot.get_chat_members(message.chat.id, filter="administrators")
-  if not message.from_user.id in (admins + OWNER_ID + OWNER_ID2):
+  if not message.from_user.id in (OWNER_ID + OWNER_ID2):
     return await message.reply_text("Become an admin first lol")
   else:
     if message.text:
