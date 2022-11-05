@@ -125,3 +125,8 @@ async def un_ban_user(_, message):
                 "</a> baka "
                 " Can Join Again!"
             )                        
+
+__MODULE__ = "Admin"
+__HELP__ = """/ban - Ban A User
+/unban - To unban a user
+/tban - Ban A User For Specific Time"""            
