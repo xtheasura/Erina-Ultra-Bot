@@ -24,6 +24,8 @@ class EqInlineKeyboardButton(InlineKeyboardButton):
     def __gt__(self, other):
         return self.text > other.text
 
+HELPABLE = {}    
+    
 PM_ERINA_TEXT = """
 **𝑆𝑢𝑝 !!! 𝐼 𝐴𝑚 𝐸𝑟𝑖𝑛𝑎, 𝑁𝑖𝑐𝑒 𝑇𝑜 𝑀𝑒𝑒𝑡 𝑌𝑜𝑢 !!**
 𝐼 𝑎𝑚 𝐴𝑛𝑑 𝑎𝑑𝑣𝑎𝑛𝑐𝑒𝑑 𝐵𝑜𝑡
