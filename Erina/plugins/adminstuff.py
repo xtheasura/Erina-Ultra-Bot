@@ -51,15 +51,15 @@ async def ban_user(_, message):
             await message.reply_text(
                 "I see..! "
                 f"{user_first_name}"
-                "Banned This Bakaaa!."
+                " Banned This Bakaaa!."
             )
-        else:
+        else: 
             await message.reply_text(
                 "I see..! "
                 f"<a href='tg://user?id={user_id}'>"
                 f"{user_first_name}"
                 "</a>"
-                "Banned This Bakaaa!."
+                " Banned This Bakaaa!."
             )
 
 
@@ -99,3 +99,29 @@ async def temp_ban_user(_, message):
                 "</a>"
                 f" banned for {message.command[1]}!"
             )
+
+@bot.on_message(
+    filters.command(["unban", "unmute"]) & admin_fliter
+)
+async def un_ban_user(_, message):
+    user_id, user_first_name, _ = extract_user(message)
+
+    try:
+        await message.chat.unban_member(user_id=user_id)
+    except Exception as error:
+        await message.reply_text(str(error))
+    else:
+        if str(user_id).lower().startswith("@"):
+            await message.reply_text(
+                "Okay Unbanned This Baka "
+                f"{user_first_name} baka "
+                " Can Join Again!"
+            )
+        else:
+            await message.reply_text(
+                "Okay Unbanned This Baka "
+                f"<a href='tg://user?id={user_id}'>"
+                f"{user_first_name}"
+                "</a> baka "
+                " Can Join Again!"
+            )                        
