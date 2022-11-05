@@ -126,6 +126,79 @@ async def un_ban_user(_, message):
                 " Can Join Again!"
             )                        
 
+from pyrogram import Client, filters
+from pyrogram.types import ChatPermissions
+from pyrobot import COMMAND_HAND_LER
+from pyrobot.helper_functions.extract_user import extract_user
+from pyrobot.helper_functions.string_handling import extract_time
+from pyrobot.helper_functions.cust_p_filters import admin_fliter
+
+
+@bot.on_message(filters.command("mute") & admin_fliter)
+async def mute_user(_, message):
+    user_id, user_first_name, _ = extract_user(message)
+
+    try:
+        await message.chat.restrict_member(
+            user_id=user_id, permissions=ChatPermissions()
+        )
+    except Exception as error:
+        await message.reply_text(str(error))
+    else:
+        if str(user_id).lower().startswith("@"):
+            await message.reply_text(
+                "On it🏻 " f"{user_first_name}" " Muted this baka"
+            )
+        else:
+            await message.reply_text(
+                "On it🏻 "
+                f"<a href='tg://user?id={user_id}'>"
+                "Bakkaaa"
+                "</a>"
+                " Muted This Baka"
+            )
+
+
+@bot.on_message(filters.command("tmute") & admin_fliter)
+async def temp_mute_user(_, message):
+    if not len(message.command) > 1:
+        return
+
+    user_id, user_first_name, _ = extract_user(message)
+
+    until_date_val = extract_time(message.command[1])
+    if until_date_val is None:
+        await message.reply_text(
+            (
+                "Not Valid. "
+                "Expected value m, h, or d, Value u gave: {}"
+            ).format(message.command[1][-1])
+        )
+        return
+
+    try:
+        await message.chat.restrict_member(
+            user_id=user_id, permissions=ChatPermissions(), until_date=until_date_val
+        )
+    except Exception as error:
+        await message.reply_text(str(error))
+    else:
+        if str(user_id).lower().startswith("@"):
+            await message.reply_text(
+                "Yeah Shut up for a while!"
+                f"{user_first_name}"
+                f" muted for {message.command[1]}!"
+            )
+        else:
+            await message.reply_text(
+                "Yeah Shut up for a while!"
+                f"<a href='tg://user?id={user_id}'>"
+                "Baka"
+                "</a>"
+                " bakaaaa "
+                f" muted for {message.command[1]}!"
+            )            
+            
 __MODULE__ = "Admin"
 __HELP__ = """/ban - Ban A User
 /unban - To unban a user
