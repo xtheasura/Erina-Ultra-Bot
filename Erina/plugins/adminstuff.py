@@ -126,12 +126,6 @@ async def un_ban_user(_, message):
                 " Can Join Again!"
             )                        
 
-from pyrogram import Client, filters
-from pyrogram.types import ChatPermissions
-from pyrobot import COMMAND_HAND_LER
-from pyrobot.helper_functions.extract_user import extract_user
-from pyrobot.helper_functions.string_handling import extract_time
-from pyrobot.helper_functions.cust_p_filters import admin_fliter
 
 
 @bot.on_message(filters.command("mute") & admin_fliter)
