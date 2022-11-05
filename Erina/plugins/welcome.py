@@ -102,7 +102,7 @@ async def setwelcome(_,message):
     
 
 
-@bot.on_message(get_command("clearwelcome"))
+@bot.on_message(filters.command("clearwelcome"))
 async def clearwelcome(_,message):
   admins = await bot.get_chat_members(message.chat.id, filter="administrators")
   if not message.from_user.id in (admins + OWNER_ID + OWNER_ID2):
@@ -155,7 +155,7 @@ async def welcome(_,message):
             return await func(file, caption=cap, reply_markup=keyb)
 
 
-@bot.on_message(get_command('welcome'))
+@bot.on_message(filters.command('welcome'))
 async def save_get_welcome(_, message):
   q = parse_com(message.text, 'welcome')
   if not q:
