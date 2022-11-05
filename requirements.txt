@@ -1,4 +1,4 @@
-pyrogram==1.4.16
+Pyrogram==2.0.57
 tgcrypto
 requests
 bs4
@@ -23,3 +23,35 @@ pillow
 animeflv
 telegraph
 libgen_api
+
+# GET / POST network requests
+asyncio==3.4.3
+aiohttp==3.7.4
+
+# scrapping tools [not used anywhere]
+beautifulsoup4==4.9.1
+
+# get metadata from files
+hachoir==3.1.1
+
+# process(, and resize) images
+Pillow==9.0.1
+
+# SQL DataBase ReQuirements
+psycopg2-binary==2.8.6
+sqlalchemy==1.3.23
+
+# download remote files
+pySmartDL==1.3.4
+
+# Google Drive ReQuirements
+google-api-python-client==2.36.0
+google-auth-httplib2==0.1.0
+google-auth-oauthlib==0.4.6
+oauth2client==4.1.3
+
+# for reading .env files
+python-dotenv==0.10
+
+# for interacting with te.legra.ph
+telegraph==1.4.1
