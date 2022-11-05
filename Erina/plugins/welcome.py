@@ -43,9 +43,6 @@ def parse_com(com, key):
 
 @bot.on_message(filters.command('setwelcome') & admin_fliter)
 async def setwelcome(_,message):
-  if not message.from_user.id in (OWNER_ID + OWNER_ID2):
-    return await message.reply_text("Become an admin first lol")
-  else:
     if message.text:
       welcome = parse_com(message.text, 'setwelcome')
     elif message.caption:
