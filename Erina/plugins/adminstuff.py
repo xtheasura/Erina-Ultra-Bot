@@ -4,6 +4,7 @@ from Erina.helper_functions.extract_user import extract_user
 from Erina.helper_functions.cust_p_filters import admin_fliter
 from datetime import datetime, timedelta
 import time
+from pyrogram.types import ChatPermissions
 
 def extract_time(time_val):
     if any(time_val.endswith(unit) for unit in ("s", "m", "h", "d")):
