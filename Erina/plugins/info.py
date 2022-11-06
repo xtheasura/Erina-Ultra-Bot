@@ -1,4 +1,4 @@
-from Bot import bot
+from Erina import bot
 from pyrogram import filters
 
 
