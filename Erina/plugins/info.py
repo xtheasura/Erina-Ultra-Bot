@@ -28,7 +28,7 @@ commands = BotCommands()
 
 @bot.on_message(filters.command("info"))
 @use_chat_lang()
-async def user_info(c: Client, m: Message, strings):
+async def user_info(c: bot, m: Message, strings):
     if len(m.command) == 2:
         try:
             user = await c.get_users(
