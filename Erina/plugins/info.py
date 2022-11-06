@@ -7,7 +7,7 @@ from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import BadRequest, UserNotParticipant
 from pyrogram.types import Message
-from Erina import bot
+from Erina import bot as Client
 
 def use_chat_lang(context: str = None):
     if not context:
@@ -26,9 +26,9 @@ class BotCommands:
         
 commands = BotCommands()
 
-@bot.on_message(filters.command("info"))
+@Client.on_message(filters.command("info"))
 @use_chat_lang()
-async def user_info(c: bot, m: Message, strings):
+async def user_info(c: Client, m: Message, strings):
     if len(m.command) == 2:
         try:
             user = await c.get_users(
