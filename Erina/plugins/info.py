@@ -20,6 +20,10 @@ def use_chat_lang(context: str = None):
             fname = fname[len(cwd) + 1 :]
         context = fname.split(os.path.sep)[2].split(".")[0] 
 
+class BotCommands:
+    def __init__(self):
+        self.commands = {}        
+        
 commands = BotCommands()
 
 @bot.on_message(filters.command("info"))
