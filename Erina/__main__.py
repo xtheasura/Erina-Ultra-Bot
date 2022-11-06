@@ -162,3 +162,5 @@ if __name__ == "__main__":
     print("I AM NOW ONLINE") 
     print("Project By Ryu120, Gift to my bich Tarun")
     idle()
+    with bot:
+        bot.send_message(-1001870797355 , "I Am Now online")
