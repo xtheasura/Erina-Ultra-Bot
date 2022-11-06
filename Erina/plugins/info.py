@@ -3,11 +3,10 @@ import inspect
 import html
 import os
 
-from pyrogram import filters
+from pyrogram import filters, Client
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import BadRequest, UserNotParticipant
 from pyrogram.types import Message
-from Erina import bot as Client
 
 def use_chat_lang(context: str = None):
     if not context:
